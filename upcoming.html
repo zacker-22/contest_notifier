@@ -69,9 +69,29 @@ table{
 			 	</tr>
 			 	</table>
 
+
 			 	{%end%}
 
 			</p>
+			<p>
+				<h2>CodeChef</h2>
+				<table>
+			 	<tr><td><b>Name</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>
+			 	</table>				
+				{%for contest in codechef_contests%}
+				<table>
+			 	<tr>
+			 		<td>{{contest[0]}}</td>
+			 		<td>{{contest[1]}}</td>
+			 		<td>{{contest[2]}}</td>				 	
+			 	</tr>
+			 	</table>
+
+
+			 	{%end%}
+
+			</p>
+			
 			
 			<a href="/upcoming" class="button">Refresh</a>
 			
