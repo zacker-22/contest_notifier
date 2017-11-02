@@ -34,9 +34,56 @@
 			<span class="byline">Get all the information on programming contests.</span> </div>
 		<div class="content">
 			<p>
-				{%for contest in hackerrank_contests%}
-				<li>{{contest[0]+"    "+contest[1]+"    "+contest[2]}}</li>
-				{%end%}
+			<h1><b>Hackerrank</b></h1>	
+			<table>
+			 <tr><td><b>Name</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>
+			 </table>		
+			{%for contest in hackerrank_contests%}
+			 <table>
+			 <tr>
+			 	<td>{{contest[0]}}</td>
+			 	<td>{{contest[1]}}</td>
+			 	<td>{{contest[2]}}</td>	
+			 	
+			 </tr>
+			 </table>
+
+			 {%end%}
+			</p>
+			<p>
+				<h1><b>Codeforces</b></h1>
+				<table>
+			 	<tr><td><b>Name</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>
+			 	</table>				
+				{%for contest in codeforces_contests%}
+				<table>
+			 	<tr>
+			 		<td>{{contest[0]}}</td>
+			 		<td>{{contest[1]}}</td>
+			 		<td>{{contest[2]}}</td>				 	
+			 	</tr>
+			 	</table>
+
+
+			 	{%end%}
+
+			</p>
+			<p>
+				<h1><b>CodeChef</b></h1>
+				<table>
+			 	<tr><td><b>Name</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>
+			 	</table>				
+				{%for contest in codechef_contests%}
+				<table>
+			 	<tr>
+			 		<td>{{contest[0]}}</td>
+			 		<td>{{contest[1]}}</td>
+			 		<td>{{contest[2]}}</td>				 	
+			 	</tr>
+			 	</table>
+
+
+			 	{%end%}
 
 			</p>
 			<a href="/ongoing" class="button">Refresh</a> </div>

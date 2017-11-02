@@ -51,6 +51,6 @@ def codechef():
 	    start_date=datetime.datetime.strptime(start_date,"%d %m %Y %H:%M:%S ")
 	    end_date=datetime.datetime.strptime(end_date,"%d %m %Y %H:%M:%S ")
 	    contestName = k[1].text
-	    contests.append((contestName,start_date,end_date))
+	    contests.append((contestName,str(start_date),str(end_date)))
 
 	return contests
