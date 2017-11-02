@@ -9,7 +9,14 @@
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-
+<style>
+table,th,td{
+	border:2px solid black;
+	vertical-align : top;
+	padding : 15px;
+	horizontal-align : center;
+}
+</style>
 
 </head>
 <body>
@@ -37,14 +44,17 @@
 			<h2>Hackerrank</h2>
 			{%for contest in hackerrank_contests%}
 			 <table>
-			 <tr><td>{{((contest[0])+"   "+contest[1]+"   "+contest[2])}}</td></tr></table>
+			 <tr><td>{{((contest[0])+"   "+contest[1]+"   "+contest[2])}}</td></tr>
+			 </table>
 
 			 {%end%}
 			</p>
 			<p>
 				<h2>Codeforces</h2>
 				{%for contest in codeforces_contests%}
-					 <li>{{((contest[0])+"   "+contest[1]+"   "+contest[2])}}</li>
+				<table>
+					<tr><td>{{((contest[0])+"   "+contest[1]+"   "+contest[2])}}</li></td></tr>
+				</table>
 
 			 	{%end%}
 
