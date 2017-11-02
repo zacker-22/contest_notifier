@@ -36,7 +36,10 @@
 			<p>
 			<h2>Hackerrank</h2>
 			{%for contest in hackerrank_contests%}
-			 <li>{{((contest[0])+"   "+contest[1]+"   "+contest[2])}}</li>
+			<table>
+				<tr><td>
+			 {{((contest[0])+"   "+contest[1]+"   "+contest[2])}}</td></tr>
+			</table>>
 
 			 {%end%}
 			</p>
