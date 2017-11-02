@@ -5,16 +5,15 @@ Created on Thu Sep 28 11:52:54 2017
 @author: HP 15 AB032TX
 """
 import bs4
-import urllib2,urllib
+import requests
 from bs4 import BeautifulSoup 
 import datetime
 def codeforces():
 	
 
 	url2="http://codeforces.com/contests"
-	uclient=urllib2.urlopen(url2)
-	page_html=uclient.read();
-	uclient.close()
+	uclient=requests.get(url2)
+	page_html=uclient.text;
 	ps = BeautifulSoup(page_html, "html.parser")
 	contestInfo = ps.findAll("div", {"class": "datatable"})[0]
 	allRows = contestInfo.findAll("tr")
