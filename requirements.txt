@@ -4,5 +4,4 @@ downloader==0.98
 requests==2.13.0
 requests-oauthlib==0.8.0
 tornado==4.4.2
-urllib
-urllib2
+
