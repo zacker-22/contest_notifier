@@ -31,7 +31,7 @@ def codeforces():
 	    mon=str(Months.index(mon))
 	    start_date[0]=mon
 	    start_date="/".join(start_date)
-	    start_date=datetime.datetime.strptime(start_date,"%m/%d/%Y %H:%M")
+	    start_date=datetime.datetime.strptime(start_date,"%m/%d/%Y %H:%M")+datetime.timedelta(minutes=150)
 	    
 	    #End date Calculation from Duration ans Start Date
 

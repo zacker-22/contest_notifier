@@ -19,8 +19,8 @@ def hackerrank():
         startDate = status[0].find_all("meta", {"itemprop": "startDate"})
         endDate = status[0].find_all("meta", {"itemprop": "endDate"})
         date_posted = endDate[0]['content']
-        last_date = datetime.datetime.strptime(date_posted, '%Y-%m-%dT%H:%M:%S.%fZ')
-        start_date = datetime.datetime.strptime(startDate[0]['content'],'%Y-%m-%dT%H:%M:%S.%fZ')
+        last_date = datetime.datetime.strptime(date_posted, '%Y-%m-%dT%H:%M:%S.%fZ')+datetime.timedelta(minutes=330)
+        start_date = datetime.datetime.strptime(startDate[0]['content'],'%Y-%m-%dT%H:%M:%S.%fZ')++datetime.timedelta(minutes=330)
         Contests.append((contestName[0].get_text(),str(start_date),str(last_date)))
     return Contests
 
