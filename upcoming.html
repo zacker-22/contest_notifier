@@ -9,15 +9,13 @@
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <style>
-table,th,td{
-	border:2px solid black;
-	vertical-align : top;
-	padding : 15px;
-	horizontal-align : center;
+table{
+	width: 100%;
+    table-layout: fixed;
 }
 </style>
-
 </head>
 <body>
 <div id="header-wrapper">
@@ -41,20 +39,35 @@ table,th,td{
 			<span class="byline">Get all the information on programming contests.</span> </div>
 		<div class="content">
 			<p>
-			<h2>Hackerrank</h2>
+			<h2>Hackerrank</h2>	
+			<table>
+			 <tr><td><b>Name</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>
+			 </table>		
 			{%for contest in hackerrank_contests%}
 			 <table>
-			 <tr><td>{{((contest[0])+"   "+contest[1]+"   "+contest[2])}}</td></tr>
+			 <tr>
+			 	<td>{{contest[0]}}</td>
+			 	<td>{{contest[1]}}</td>
+			 	<td>{{contest[2]}}</td>	
+			 	
+			 </tr>
 			 </table>
 
 			 {%end%}
 			</p>
 			<p>
 				<h2>Codeforces</h2>
+				<table>
+			 	<tr><td><b>Name</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>
+			 	</table>				
 				{%for contest in codeforces_contests%}
 				<table>
-					<tr><td>{{((contest[0])+"   "+contest[1]+"   "+contest[2])}}</td></tr>
-				</table>
+			 	<tr>
+			 		<td>{{contest[0]}}</td>
+			 		<td>{{contest[1]}}</td>
+			 		<td>{{contest[2]}}</td>				 	
+			 	</tr>
+			 	</table>
 
 			 	{%end%}
 
