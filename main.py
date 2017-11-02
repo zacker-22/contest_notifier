@@ -6,6 +6,8 @@ import time
 import datetime
 from hackerrank import hackerrank
 from codeforces import codeforces
+from codechef import codechef
+
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
 
@@ -14,7 +16,8 @@ class UpcomingHandler(tornado.web.RequestHandler):
     def get(self):
         hackerrank_contests=hackerrank()
         codeforces_contests=codeforces()
-        self.render("upcoming.html",hackerrank_contests=hackerrank_contests,codeforces_contests=codeforces_contests)
+        codechef_contests=codechef()
+        self.render("upcoming.html",hackerrank_contests=hackerrank_contests,codeforces_contests=codeforces_contests,codechef_contests=codechef_contests)
 
 class OngoingHandler(tornado.web.RequestHandler):
     def get(self):
