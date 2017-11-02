@@ -7,8 +7,8 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
 
 </head>
@@ -18,8 +18,8 @@
 		<div id="menu">
 			<ul>
 				<li class="current_page_item"><a href="#" accesskey="1" title="">Ongoing</a></li>
-				<li><a href="upcoming.html" accesskey="2" title="">Upcoming</a></li>
-				<li><a href="aboutus.html" accesskey="3" title="">About Us</a></li>
+				<li><a href="/upcoming" accesskey="2" title="">Upcoming</a></li>
+				<li><a href="/" accesskey="3" title="">About Us</a></li>
 			</ul>
 		</div>
 		<div id="logo">
@@ -33,8 +33,13 @@
 			<h2>Welcome to our website</h2>
 			<span class="byline">Get all the information on programming contests.</span> </div>
 		<div class="content">
-			<p>--- Here the current running contests will be showed ---</p>
-			<a href="#" class="button">Refresh</a> </div>
+			<p>
+				{%for contest in hackerrank_contests%}
+				<li>{{contest[0]+"    "+contest[1]+"    "+contest[2]}}</li>
+				{%end%}
+
+			</p>
+			<a href="/ongoing" class="button">Refresh</a> </div>
 	</div>
 </div>
 <div id="wrapper3">
