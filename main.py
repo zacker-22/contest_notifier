@@ -36,7 +36,7 @@ class OngoingHandler(tornado.web.RequestHandler):
         for contest in codechef_contests:
             if datetime.datetime.strptime(contest[1],"%Y-%m-%d %H:%M:%S")<=cur<=datetime.datetime.strptime(contest[2],"%Y-%m-%d %H:%M:%S"):
                 ongoing_codechef.append(contest)
-        print ongoing_codechef,ongoing_hackerrank,ongoing_codeforces
+        #print ongoing_codechef,ongoing_hackerrank,ongoing_codeforces
         self.render("ongoing.html",hackerrank_contests=ongoing_hackerrank,codeforces_contests=ongoing_codeforces,codechef_contests=ongoing_codechef)
 
 if __name__ == "__main__":
