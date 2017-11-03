@@ -26,22 +26,24 @@ def codeforces():
 	for i in range(len(allRows)-1):
 	    k= allRows[i+1].findAll("td")
 	    #Start Date Standardization 
-	    start_date=k[2].text.strip().split("/")
-	    mon=start_date[0]
-	    mon=str(Months.index(mon))
-	    start_date[0]=mon
-	    start_date="/".join(start_date)
-	    start_date=datetime.datetime.strptime(start_date,"%m/%d/%Y %H:%M")+datetime.timedelta(minutes=150)
-	    
-	    #End date Calculation from Duration ans Start Date
+	    if len(k)>=4:
+		    start_date=k[2].text.strip().split("/")
+		    mon=start_date[0]
+		    mon=str(Months.index(mon))
+		    start_date[0]=mon
+		    start_date="/".join(start_date)
+		    start_date=datetime.datetime.strptime(start_date,"%m/%d/%Y %H:%M")+datetime.timedelta(minutes=150)
+		    
+		    #End date Calculation from Duration ans Start Date
 
-	    duration=k[3].text.strip().split(":")[::-1]
-	    duration_in_minutes=int(duration[0])+60*int(duration[1])
-	    	#duration_in_minutes+=(60**i)*int(duration[i])
-	    #print duration_in_minut
-	    end_date=start_date+datetime.timedelta(minutes=duration_in_minutes)
-	    #print end_date,start_date,duration    
-	    Contests.append((str(k[0].text.strip()),str(start_date),str(end_date)))
-	    #print Contests
+		    duration=k[3].text.strip().split(":")[::-1]
+		    duration_in_minutes=int(duration[0])+60*int(duration[1])
+		    	#duration_in_minutes+=(60**i)*int(duration[i])
+		    #print duration_in_minut
+		    end_date=start_date+datetime.timedelta(minutes=duration_in_minutes)
+		    #print end_date,start_date,duration    
+		    Contests.append((str(k[0].text.strip()),str(start_date),str(end_date)))
+		    #print Contests
 	    return Contests
 	    #print "Contest Name: "+str(k[0].text.strip()),"Contest Duration: " + str(start_date) + " - " + str(end_date)
+codeforces()
