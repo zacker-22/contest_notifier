@@ -11,147 +11,35 @@
 <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <style>
+
 table{
 	width: 100%;
     table-layout: fixed;
 }
 </style>
+<script type="text/javascript">
+		
+		var arr=["black","blue","green","pink"];
+	var glob=0;
+	function rot()
+	{
+		document.getElementById("body").style.backgroundColor=arr[glob%4];
+	
+		glob=glob+1;
+		
+	
+
+		setTimeout(rot,1000);
+	}
+
+</script>
 </head>
-<body>
-<div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="menu">
-			<ul>
-				<li class="current_page_item"><a href="#" accesskey="1" title="">Upcoming</a></li>
-				<li><a href="ongoing" accesskey="2" title="">Ongoing</a></li>
-				<li><a href="/" accesskey="3" title="">About Us</a></li>
-			</ul>
-		</div>
-		<div id="logo">
-			<h1><a href="#"><b>Contest Notifier</b></a></h1>
-			<span>Know your COMPETITION</span> </div>
-	</div>
-</div>
-<div id="wrapper1">
-	<div id="welcome" class="container">
-		<div class="title">
-			<h2>Welcome to our website</h2>
-			<span class="byline">Get all the information on programming contests.</span> </div>
-		<div class="content">
-			<p>
-			<h1><b>HackerRank</b></h1>	
-			<table>
-			 <tr><td><b>Name</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>
-			 </table>		
-			{%for contest in hackerrank_contests%}
-			 <table>
-			 <tr>
-			 	<td>{{contest[0]}}</td>
-			 	<td>{{contest[1]}}</td>
-			 	<td>{{contest[2]}}</td>	
-			 	
-			 </tr>
-			 </table>
-
-			 {%end%}
-			</p>
-			<p>
-				<h1><b>CodeForces</b></h1>
-				<table>
-			 	<tr><td><b>Name</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>
-			 	</table>				
-				{%for contest in codeforces_contests%}
-				<table>
-			 	<tr>
-			 		<td>{{contest[0]}}</td>
-			 		<td>{{contest[1]}}</td>
-			 		<td>{{contest[2]}}</td>				 	
-			 	</tr>
-			 	</table>
+<body id="body">
 
 
-			 	{%end%}
 
-			</p>
-			<p>
-				<h1><b>CodeChef</b></h1>
-				<table>
-			 	<tr><td><b>Name</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>
-			 	</table>				
-				{%for contest in codechef_contests%}
-				<table>
-			 	<tr>
-			 		<td>{{contest[0]}}</td>
-			 		<td>{{contest[1]}}</td>
-			 		<td>{{contest[2]}}</td>				 	
-			 	</tr>
-			 	</table>
-
-
-			 	{%end%}
-
-			</p>
-			
-			
-			<a href="/upcoming" class="button">Refresh</a>
-			
-		</div>
-	</div>
-</div>
-<div id="wrapper3">
-	<div id="portfolio" class="container">
-		<div class="title">
-			<h2>SIGN UP and START</h2>
-			<span class="byline">You can start your programming</span> </div>
-		<div class="pbox1">
-			<div class="column1">
-				<div class="box"> 
-					<img src="images/HR.jpg"><img>
-					<a href="https://www.hackerrank.com/">HackerRank</a>
-				</div>
-			</div>
-			<div class="column2">
-				<div class="box"> 
-					<img src="images/TC.jpg"><img>
-					<a href="https://www.topcoder.com/">TopCoder</a>
-				</div>
-			</div>
-			<div class="column3">
-				<div class="box"> 
-					<img src="images/CC.png"><img>
-					<a href="https://www.codechef.com/">CodeChef</a>
-				</div>
-			</div>
-			<div class="column1">
-				<div class="box"> 
-					<img src="images/CF.png"><img>
-					<a href="http://codeforces.com/">CodeForces</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="wrapper2">
-	<div id="featured" class="container">
-		<div class="box1">
-			<h2><span class="icon icon-group"></span>OUR AIM</h2>
-			<p>We want everyone to participate in programming competitions as much as they can. This will help to boost your confidence and your cognitive thinking abilities. It will also help in problem solving and to grab better life opportunities. </p>
-		</div>
-		<div class="box2">
-			<h2><span class="icon icon-briefcase"></span>MOTIVATION</h2>
-			<p>"Every great developer you know got there by solving problems they were unqualified to solve until they actually did it." <br>- Patrick McKenzie<br>"How did you know so much about computers?""I didn't, it was the first one" <br>- Grace Hopper </p>
-		</div>
-	</div>
-</div>
-<div id="copyright">
-	<div class="title">
-		<h2>Get in touch</h2>
-		<span class="byline">Message us for any queries or suggestions.</span> </div>
-	<ul class="contact">
-		<li><a href="#" class="icon icon-facebook"><span></span></a></li>
-		<li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
-	</ul>
-	<p>Rishabh Jain, Aaditya Vaidya, Dev Kumar, Yash Shah: VIT University, Vellore</p>
-</div>
 </body>
+<script type="text/javascript">
+	rot();
+</script>
 </html>
