@@ -24,5 +24,5 @@ def hackerrank():
         Contests.append((contestName[0].get_text(),str(start_date),str(last_date)))
     return Contests
 
-print hackerrank()
+
    
